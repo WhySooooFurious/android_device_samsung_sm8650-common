@@ -284,9 +284,12 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/google/pixel \
     hardware/lineage/interfaces/power-libperfmgr \
     hardware/qcom-caf/common/libqti-perfd-client \
-    hardware/qcom-caf/wlan/qcwcn \
+    hardware/qcom-caf/wlan \
     hardware/samsung \
     vendor/lineage/imsstack-carrier-config-ext
+
+# A16 libwifi_hal defaults reference the qcom wifi HAL defaults module
+SOONG_CONFIG_NAMESPACES += qcom_wifi
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
