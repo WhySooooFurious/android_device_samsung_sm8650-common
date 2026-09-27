@@ -435,3 +435,11 @@ PRODUCT_COPY_FILES += \
 
 # Inherit from the proprietary files makefile.
 $(call inherit-product, vendor/samsung/sm8650-common/sm8650-common-vendor.mk)
+
+# A16: libjxl (vendor_available) depends on libhwy + libskia_skcms, but the
+# base modules (external/google-highway, external/skia) are not vendor_available.
+# Build the device-tree override copies in the vendor image; `overrides`
+# excludes the base modules.
+PRODUCT_VENDOR_MODULES += \
+    libhwy_vendor_override \
+    libskia_skcms_vendor_override
