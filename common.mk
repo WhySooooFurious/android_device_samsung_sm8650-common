@@ -289,8 +289,6 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/samsung \
     vendor/lineage/imsstack-carrier-config-ext
 
-# A16 libwifi_hal defaults reference the qcom wifi HAL defaults module
-SOONG_CONFIG_NAMESPACES += qcom_wifi
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
