@@ -49,12 +49,10 @@ PRODUCT_PACKAGES += \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
-    libsamsungSoundbooster_plus \
     libsndcardparser \
     libtinycompress \
     libvolumelistener \
     SamsungDAP \
-    SoundBoosterStage \
     sound_trigger.primary.pineapple
 
 TARGET_EXCLUDES_AUDIOFX := true
@@ -139,7 +137,6 @@ PRODUCT_PACKAGES += \
 
 # eUICC
 PRODUCT_PACKAGES += \
-    SamsungEsimSwitcher \
     SamsungEuicc
 
 PRODUCT_COPY_FILES += \
@@ -221,7 +218,6 @@ $(call soong_config_set,imsstack_namespace,use_carrier_config_ext,true)
 $(call soong_config_set_bool,imsstack_namespace,use_android16_telephony_compat,true)
 
 PRODUCT_PACKAGES += \
-    ImsStack \
     ImsStackOverlay \
     Iwlan \
     QualifiedNetworksService
