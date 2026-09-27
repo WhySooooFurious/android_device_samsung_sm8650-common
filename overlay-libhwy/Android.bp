@@ -1,0 +1,5 @@
+cc_library {
+    name: "libhwy_vendor_override",
+    overrides: ["libhwy"],
+    vendor_available: true,
+}
