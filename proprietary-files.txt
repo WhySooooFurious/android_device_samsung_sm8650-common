@@ -1156,6 +1156,7 @@ vendor/lib64/libsnsutils.so
 vendor/lib64/sensors.flicker.so
 vendor/lib64/sensors.grip.so
 vendor/lib64/sensors.qsh.so
+vendor/lib64/libssc_default_listener.so
 
 # SSR
 vendor/bin/ssr_diag
