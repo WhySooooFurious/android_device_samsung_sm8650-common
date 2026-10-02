@@ -39,6 +39,7 @@ PRODUCT_PACKAGES += \
     libagm_mixer_plugin \
     libagm_pcm_plugin \
     libagmclient \
+    libagmmixer \
     libaudiochargerlistener \
     libbatterylistener \
     libcustomva_intf \
