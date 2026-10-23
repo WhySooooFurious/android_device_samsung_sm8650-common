@@ -58,6 +58,20 @@ PRODUCT_PACKAGES += \
     SoundBoosterStage \
     sound_trigger.primary.pineapple
 
+# Exynoobs prebuilt audio stack
+PRODUCT_PACKAGES += \
+    libagm \
+    libar-acdb \
+    libar-gpr \
+    libar-gsl \
+    libar-pal \
+    libarmemlog \
+    libats \
+    liblx-ar_util \
+    liblx-osal \
+    vendor.qti.hardware.AGMIPC@1.0-impl \
+    vendor.qti.hardware.pal@1.0-impl
+
 TARGET_EXCLUDES_AUDIOFX := true
 
 $(call soong_config_set,samsungAudioVars,soundbooster_dsp_library,//vendor/samsung/sm8650-common:lib_SoundBooster_ver2000)
