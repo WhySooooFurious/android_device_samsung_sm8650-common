@@ -1,0 +1,15 @@
+# Macro definitions for the sm8650-common vendor sepolicy.
+#
+# hal_attribute_lineage is defined by the LineageOS base
+# (device/lineage/sepolicy/common/public/te_macros) but that te_macros is not
+# pulled into the vendor build on the Evolution-X base, so define it here.
+#####################################
+# hal_attribute_lineage(hal_name)
+define(`hal_attribute_lineage', `
+attribute hal_$1;
+expandattribute hal_$1 true;
+attribute hal_$1_client;
+expandattribute hal_$1_client true;
+attribute hal_$1_server;
+expandattribute hal_$1_server false;
+')
