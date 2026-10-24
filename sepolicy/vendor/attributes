@@ -7,7 +7,3 @@ hal_attribute_lineage(lineage_livedisplay)
 hal_attribute_lineage(lineage_touch)
 hal_attribute_lineage(lineage_trust)
 hal_attribute_lineage(lineage_powershare)
-# vendor_persist_camera_prop is referenced by qcom vendor policy (qtelephony.te)
-# and public policy (cameraserver.te) but not declared in the vendor build on the
-# Evolution-X base, so declare it here.
-type vendor_persist_camera_prop;

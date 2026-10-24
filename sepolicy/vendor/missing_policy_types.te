@@ -1,7 +1,0 @@
-# Types referenced by the vendor sepolicy conf but not declared anywhere in
-# this build (lineage/qcom version skew). Declared as restricted vendor
-# property types so the treble sysprop neverallow (property.te:164) excludes
-# them (base_typeattr_900 = vpt AND vendor_internal AND NOT restricted/public).
-type sysfs_livedisplay_tuneable, fs_type, sysfs_type;
-type vendor_fm_radio_app_prop, property_type, vendor_property_type, vendor_restricted_property_type;
-type xtra_control_prop, property_type, vendor_property_type, vendor_restricted_property_type;
