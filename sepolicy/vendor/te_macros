@@ -1,8 +1,27 @@
-# Macro definitions for the sm8650-common vendor sepolicy.
+# LineageOS HAL/file macros (rw_dir_file, create_dir_file, hal_attribute_lineage).
 #
-# hal_attribute_lineage is defined by the LineageOS base
-# (device/lineage/sepolicy/common/public/te_macros) but that te_macros is not
-# pulled into the vendor build on the Evolution-X base, so define it here.
+# Defined early in the vendor build because the Evolution-X base includes the
+# lineage te_macros (device/lineage/sepolicy/common/public/te_macros) late,
+# after the .te files that use these macros.
+
+#####################################
+# rw_dir_file(domain, type)
+# Allow the specified domain to read directories and read/write files
+# and symbolic links of the specified type.
+define(`rw_dir_file', `
+allow $1 $2:dir r_dir_perms;
+allow $1 $2:{ file lnk_file } rw_file_perms;
+')
+
+#####################################
+# create_dir_file(domain, type)
+# Allow the specified domain to read directories and create files
+# and symbolic links of the specified type.
+define(`create_dir_file', `
+allow $1 $2:dir r_dir_perms;
+allow $1 $2:{ file lnk_file } create_file_perms;
+')
+
 #####################################
 # hal_attribute_lineage(hal_name)
 define(`hal_attribute_lineage', `
