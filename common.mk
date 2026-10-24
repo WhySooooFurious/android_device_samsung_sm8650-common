@@ -236,6 +236,7 @@ $(call soong_config_set,imsstack_namespace,use_carrier_config_ext,true)
 $(call soong_config_set_bool,imsstack_namespace,use_android16_telephony_compat,true)
 
 PRODUCT_PACKAGES += \
+    ImsStack \
     ImsStackOverlay \
     Iwlan \
     QualifiedNetworksService
@@ -293,6 +294,7 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/qcom-caf/wlan \
     hardware/qcom-caf/wlan/qcwcn \
     hardware/samsung \
+    vendor/lineage/imsstack-carrier-config-ext
 
 
 # Overlays
