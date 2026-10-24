@@ -1,0 +1,5 @@
+# Types referenced by the vendor sepolicy conf but not declared anywhere in
+# this build (lineage/qcom version skew).
+type sysfs_livedisplay_tuneable, fs_type, sysfs_type;
+type vendor_fm_radio_app_prop, property_type;
+type xtra_control_prop, property_type;
