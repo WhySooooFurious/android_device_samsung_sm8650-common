@@ -1,1 +1,9 @@
 hal_attribute_lineage(samsung_spen)
+# LineageOS HAL attributes (declared early so the lineage .te files that use
+# them parse correctly on the Evolution-X base).
+# HALs
+hal_attribute_lineage(lineage_health)
+hal_attribute_lineage(lineage_livedisplay)
+hal_attribute_lineage(lineage_touch)
+hal_attribute_lineage(lineage_trust)
+hal_attribute_lineage(lineage_powershare)
