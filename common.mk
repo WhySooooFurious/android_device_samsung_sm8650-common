@@ -314,7 +314,7 @@ PRODUCT_PACKAGES += \
 # namespace cannot see system/lib64, so copy it from the system image.
 PRODUCT_ENFORCE_PACKAGES_EXIST_ALLOW_LIST += libperfmgr
 PRODUCT_COPY_FILES += \
-    $(OUT)/target/product/$(TARGET_DEVICE)/system/lib64/libperfmgr.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libperfmgr.so
+    $(OUT_DIR)/target/product/$(TARGET_DEVICE)/system/lib64/libperfmgr.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libperfmgr.so
 
 # PowerShare
 PRODUCT_PACKAGES += \
