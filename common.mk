@@ -41,10 +41,8 @@ PRODUCT_PACKAGES += \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
-    libsamsungSoundbooster_plus \
     libvolumelistener \
     SamsungDAP \
-    SoundBoosterStage \
     sound_trigger.primary.pineapple
 
 TARGET_EXCLUDES_AUDIOFX := true
@@ -131,7 +129,6 @@ PRODUCT_PACKAGES += \
 
 # eUICC
 PRODUCT_PACKAGES += \
-    SamsungEsimSwitcher \
     SamsungEuicc
 
 PRODUCT_COPY_FILES += \
@@ -309,6 +306,7 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service.lineage-libperfmgr \
+    libperfmgr \
     libqti-perfd-client
 
 # PowerShare
