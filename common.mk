@@ -207,7 +207,6 @@ PRODUCT_PACKAGES += \
 # AOSP userspace IMS and framework bearer services
 $(call inherit-product, packages/modules/ImsMedia/imsmedia.mk)
 $(call inherit-product, packages/apps/CarrierSettings/carrier_settings.mk)
-$(call soong_config_set_bool,imsstack_namespace,use_android16_telephony_compat,true)
 
 PRODUCT_PACKAGES += \
     ImsStack \
