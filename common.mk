@@ -313,7 +313,7 @@ PRODUCT_PACKAGES += \
 # vendor/lib64; A17 does not install the dep module, and the vendor linker
 # namespace cannot see system/lib64, so copy it from the system image.
 PRODUCT_COPY_FILES += \
-    $(OUT_DIR)/target/product/$(TARGET_DEVICE)/system/lib64/libperfmgr.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libperfmgr.so
+    $(OUT_DIR)/soong/.intermediates/hardware/google/pixel/power-libperfmgr/libperfmgr/libperfmgr/android_arm64_armv8-2a-dotprod_shared/libperfmgr.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libperfmgr.so
 
 # PowerShare
 PRODUCT_PACKAGES += \
