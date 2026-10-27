@@ -271,6 +271,7 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/google/interfaces \
     hardware/google/pixel \
+    hardware/google/pixel/power-libperfmgr \
     hardware/lineage/interfaces/power-libperfmgr \
     hardware/qcom-caf/common/libqti-perfd-client \
     hardware/samsung \
@@ -308,12 +309,6 @@ PRODUCT_PACKAGES += \
     android.hardware.power-service.lineage-libperfmgr \
     libperfmgr \
     libqti-perfd-client
-
-# libperfmgr: the power HAL service (vendor binary) needs libperfmgr.so in
-# vendor/lib64; A17 does not install the dep module, and the vendor linker
-# namespace cannot see system/lib64, so copy it from the system image.
-PRODUCT_COPY_FILES += \
-    $(OUT_DIR)/soong/.intermediates/hardware/google/pixel/power-libperfmgr/libperfmgr/libperfmgr/android_arm64_armv8-2a-dotprod_shared/libperfmgr.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libperfmgr.so
 
 # PowerShare
 PRODUCT_PACKAGES += \
