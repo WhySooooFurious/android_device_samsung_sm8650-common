@@ -53,3 +53,10 @@ binder_call(hal_lineage_livedisplay_sysfs, servicemanager)
 
 # XTRA control property referenced by the lineage qcom vendor policy
 vendor_public_prop(xtra_control_prop);
+
+# Vendor properties declared by LineageOS common/vendor/property.te
+vendor_internal_prop(vendor_camera_remapid_prop)
+vendor_internal_prop(vendor_camera_skip_failed_ids_prop)
+vendor_internal_prop(vendor_ir_prop)
+vendor_internal_prop(vendor_light_prop)
+vendor_public_prop(vendor_fm_radio_app_prop)
