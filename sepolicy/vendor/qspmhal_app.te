@@ -1,3 +1,5 @@
 # The QSPM HAL daemon is not packaged (stock blobs ship only the
 # client lib), so apps probing the service get find denials.
-allow { permissioncontroller_app priv_app_36 } vendor_hal_qspmhal_service:service_manager { find };
+# permissioncontroller_app is platform-private (not vendor-visible),
+# so use the appdomain attribute to cover all app domains.
+allow appdomain vendor_hal_qspmhal_service:service_manager { find };
