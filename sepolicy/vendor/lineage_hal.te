@@ -1,0 +1,71 @@
+# LineageOS HAL types, attributes, and domains.
+# The A17 base never includes device/lineage/sepolicy/common/sepolicy.mk,
+# so the common/{public,dynamic,vendor} policy dirs are not built into the
+# vendor sepolicy unit. Provide the declarations this device needs.
+
+# HAL interface attributes
+hal_attribute_lineage(lineage_health)
+hal_attribute_lineage(lineage_livedisplay)
+hal_attribute_lineage(lineage_powershare)
+hal_attribute_lineage(lineage_touch)
+
+# Samsung spen HAL attribute (vendor/attributes is not collected into the
+# vendor conf on A17)
+hal_attribute_lineage(samsung_spen)
+
+# HAL interface client/server domains
+type hal_lineage_health_client, domain;
+type hal_lineage_health_server, domain;
+type hal_lineage_livedisplay_client, domain;
+type hal_lineage_livedisplay_server, domain;
+type hal_lineage_powershare_client, domain;
+type hal_lineage_powershare_server, domain;
+type hal_lineage_touch_client, domain;
+type hal_lineage_touch_server, domain;
+
+# HwBinder IPC from client to server
+binder_call(hal_lineage_health_client, hal_lineage_health_server)
+hal_attribute_service(hal_lineage_health, hal_lineage_health_service)
+
+binder_call(hal_lineage_livedisplay_client, hal_lineage_livedisplay_server)
+hal_attribute_service(hal_lineage_livedisplay, hal_lineage_livedisplay_service)
+
+binder_call(hal_lineage_powershare_client, hal_lineage_powershare_server)
+hal_attribute_service(hal_lineage_powershare, hal_lineage_powershare_service)
+
+binder_call(hal_lineage_touch_client, hal_lineage_touch_server)
+hal_attribute_service(hal_lineage_touch, hal_lineage_touch_service)
+
+# HAL services
+type hal_lineage_health_service, hal_service_type, service_manager_type;
+type hal_lineage_livedisplay_service, hal_service_type, service_manager_type;
+type hal_lineage_powershare_service, hal_service_type, service_manager_type;
+type hal_lineage_touch_service, hal_service_type, service_manager_type;
+
+# HAL default domains
+type hal_lineage_health_default, domain;
+hal_server_domain(hal_lineage_health_default, hal_lineage_health)
+type hal_lineage_health_default_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(hal_lineage_health_default)
+binder_call(hal_lineage_health_default, servicemanager)
+
+type hal_lineage_powershare_default, domain;
+hal_server_domain(hal_lineage_powershare_default, hal_lineage_powershare)
+type hal_lineage_powershare_default_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(hal_lineage_powershare_default)
+binder_call(hal_lineage_powershare_default, servicemanager)
+
+type hal_lineage_touch_default, domain;
+hal_server_domain(hal_lineage_touch_default, hal_lineage_touch)
+type hal_lineage_touch_default_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(hal_lineage_touch_default)
+binder_call(hal_lineage_touch_default, servicemanager)
+
+type hal_lineage_livedisplay_sysfs, domain;
+hal_server_domain(hal_lineage_livedisplay_sysfs, hal_lineage_livedisplay)
+type hal_lineage_livedisplay_sysfs_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(hal_lineage_livedisplay_sysfs)
+binder_call(hal_lineage_livedisplay_sysfs, servicemanager)
+
+# XTRA control property referenced by the lineage qcom vendor policy
+vendor_public_prop(xtra_control_prop);
