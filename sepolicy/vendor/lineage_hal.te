@@ -3,15 +3,6 @@
 # so the common/{public,dynamic,vendor} policy dirs are not built into the
 # vendor sepolicy unit. Provide the declarations this device needs.
 
-# HAL interface attributes
-hal_attribute_lineage(lineage_health)
-hal_attribute_lineage(lineage_livedisplay)
-hal_attribute_lineage(lineage_powershare)
-hal_attribute_lineage(lineage_touch)
-
-# Samsung spen HAL attribute (vendor/attributes is not collected into the
-# vendor conf on A17)
-hal_attribute_lineage(samsung_spen)
 
 # HAL interface client/server domains
 type hal_lineage_health_client, domain;

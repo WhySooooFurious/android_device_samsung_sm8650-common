@@ -23,3 +23,12 @@ expandattribute hal_$1_client true;
 attribute hal_$1_server;
 expandattribute hal_$1_server false;
 ')
+
+# Declare the LineageOS HAL interface attributes here, before first use
+# in the vendor conf. checkpolicy allows forward type references but not
+# forward attribute references.
+hal_attribute_lineage(lineage_health)
+hal_attribute_lineage(lineage_livedisplay)
+hal_attribute_lineage(lineage_powershare)
+hal_attribute_lineage(lineage_touch)
+hal_attribute_lineage(samsung_spen)
