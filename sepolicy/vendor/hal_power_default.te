@@ -18,3 +18,9 @@ allow hal_power_default vendor_sysfs_battery:file rw_file_perms;
 
 # Allow binder calls from power hal to system app 
 binder_call(hal_power_default, system_app)
+
+# A17: /sys/class/power_supply is labeled sysfs_batteryinfo by the
+# platform (children fall back to plain sysfs); the
+# vendor_sysfs_battery rules above no longer match this path.
+allow hal_power_default sysfs_batteryinfo:dir r_dir_perms;
+allow hal_power_default sysfs:file r_file_perms;

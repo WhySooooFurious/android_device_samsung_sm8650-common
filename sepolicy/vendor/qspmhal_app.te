@@ -1,0 +1,3 @@
+# The QSPM HAL daemon is not packaged (stock blobs ship only the
+# client lib), so apps probing the service get find denials.
+allow { permissioncontroller_app priv_app_36 } vendor_hal_qspmhal_service:service_manager { find };
