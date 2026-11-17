@@ -1,3 +1,11 @@
-# The hal_samsung_spen attribute is declared in ../public/te_macros
-# (single source). Declaring it here too caused a duplicate declaration
-# in the vendor conf, because soong collects this file as well.
+# Samsung spen HAL policy (not covered by the lineage common policy).
+# Soong collects this file into the vendor conf (attributes category,
+# before the .te files that use it).
+attribute hal_samsung_spen;
+expandattribute hal_samsung_spen true;
+attribute hal_samsung_spen_client;
+expandattribute hal_samsung_spen_client true;
+attribute hal_samsung_spen_server;
+expandattribute hal_samsung_spen_server false;
+
+type hal_samsung_spen_service, hal_service_type, service_manager_type;
