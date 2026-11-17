@@ -60,3 +60,9 @@ vendor_internal_prop(vendor_camera_skip_failed_ids_prop)
 vendor_internal_prop(vendor_ir_prop)
 vendor_internal_prop(vendor_light_prop)
 vendor_public_prop(vendor_fm_radio_app_prop)
+
+# File types declared by LineageOS common/dynamic/file.te, referenced by
+# the lineage qcom/dynamic genfs_contexts
+type proc_deny_new_usb, fs_type, proc_type;
+type sysfs_livedisplay_tuneable, fs_type, sysfs_type;
+type sysfs_usb_data_enabled, fs_type, sysfs_type;
