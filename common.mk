@@ -286,7 +286,9 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/google/pixel/power-libperfmgr \
     hardware/lineage/interfaces/power-libperfmgr \
     hardware/qcom-caf/common/libqti-perfd-client \
-    hardware/samsung
+    hardware/samsung \
+    hardware/qcom-caf/wlan \
+    hardware/qcom-caf/wlan/qcwcn
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
