@@ -1,18 +1,11 @@
-# LineageOS HAL types, attributes, and domains.
+# LineageOS HAL types and domains.
 # The A17 base never includes device/lineage/sepolicy/common/sepolicy.mk,
 # so the common/{public,dynamic,vendor} policy dirs are not built into the
 # vendor sepolicy unit. Provide the declarations this device needs.
-
-
-# HAL interface client/server domains
-type hal_lineage_health_client, domain;
-type hal_lineage_health_server, domain;
-type hal_lineage_livedisplay_client, domain;
-type hal_lineage_livedisplay_server, domain;
-type hal_lineage_powershare_client, domain;
-type hal_lineage_powershare_server, domain;
-type hal_lineage_touch_client, domain;
-type hal_lineage_touch_server, domain;
+#
+# The hal_lineage_*_client / _server names are attribute types declared by
+# hal_attribute_lineage() in ../public/te_macros (same as upstream
+# LineageOS); do not redeclare them as types here, that is a duplicate.
 
 # HwBinder IPC from client to server
 binder_call(hal_lineage_health_client, hal_lineage_health_server)
