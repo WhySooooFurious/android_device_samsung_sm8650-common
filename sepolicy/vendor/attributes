@@ -1,9 +1,3 @@
-define(`hal_attribute_lineage', `
-attribute hal_$1;
-expandattribute hal_$1 true;
-attribute hal_$1_client;
-expandattribute hal_$1_client true;
-attribute hal_$1_server;
-expandattribute hal_$1_server false;
-')
-hal_attribute_lineage(samsung_spen)
+# The hal_samsung_spen attribute is declared in ../public/te_macros
+# (single source). Declaring it here too caused a duplicate declaration
+# in the vendor conf, because soong collects this file as well.
