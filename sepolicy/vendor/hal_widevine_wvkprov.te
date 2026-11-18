@@ -1,9 +1,6 @@
 # Samsung Widevine keyprov HAL (ISehWidevineKeyProv)
 # Ported from the reference ROM device stack (hal_widevine_wvkprov.te).
 
-typeattribute hal_wvkprov;
-typeattribute hal_wvkprov_server;
-typeattribute hal_wvkprov_client;
 
 type hal_wvkprov_default, domain;
 typeattribute hal_wvkprov hal_wvkprov_default;
