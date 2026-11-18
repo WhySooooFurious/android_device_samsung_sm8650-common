@@ -2,7 +2,7 @@
 # Ported from the reference ROM device stack (hal_widevine_wvkprov.te).
 
 type hal_wvkprov_default, domain;
-typeattribute halserverdomain hal_wvkprov_default;
+typeattribute hal_wvkprov_default halserverdomain;
 
 type hal_wvkprov_default_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(hal_wvkprov_default);
