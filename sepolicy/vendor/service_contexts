@@ -16,3 +16,4 @@ vendor.samsung.hardware.radio.channel.ISehRadioChannel/imsd2        u:object_r:h
 
 # S pen
 vendor.samsung.hardware.spen.ISPen/default                          u:object_r:hal_samsung_spen_service:s0
+vendor.samsung.hardware.security.widevine.keyprov.ISehWidevineKeyProv/default    u:object_r:hal_wvkprov_service:s0
