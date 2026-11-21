@@ -217,7 +217,7 @@ include vendor/samsung/sm8650-common/BoardConfigVendor.mk
 # soong config values are correct.
 # abspath (not $(BUILD_TOP), which is empty in the kati pass that
 # expands the kernel.mk rule cmds) so the value is always absolute
-TARGET_KERNEL_CLANG_PATH := $(abspath prebuilts/clang/host/linux-x86/clang-stable)
+TARGET_KERNEL_CLANG_PATH := $(abspath prebuilts/clang/host/linux-x86/clang-r584948b)
 include vendor/lineage/config/BoardConfigKernel.mk
 include vendor/lineage/config/BoardConfigSoong.mk
 
