@@ -74,6 +74,10 @@ BOARD_KERNEL_PAGESIZE := 4096
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
 
 TARGET_KERNEL_SOURCE := kernel/samsung/sm8650
+# The CLO kernel-platform.mk prebuilt-headers path
+# (device/qcom/pineapple-kernel/kernel-headers) does not exist in this
+# tree; use the in-tree kernel root for device_kernel_headers.
+TARGET_BOARD_KERNEL_HEADERS := kernel/samsung/sm8650
 
 # Kernel modules
 TARGET_KERNEL_EXT_MODULE_ROOT := kernel/samsung/sm8650-modules
