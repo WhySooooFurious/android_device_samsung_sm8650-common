@@ -215,6 +215,7 @@ include vendor/samsung/sm8650-common/BoardConfigVendor.mk
 # the LineageOS kernel + soong board configs here, after the device kernel
 # vars (TARGET_KERNEL_SOURCE, TARGET_KERNEL_ARCH) are set, so the exported
 # soong config values are correct.
+TARGET_KERNEL_CLANG_PATH := $(BUILD_TOP)/prebuilts/clang/host/linux-x86/clang-stable
 include vendor/lineage/config/BoardConfigKernel.mk
 include vendor/lineage/config/BoardConfigSoong.mk
 
