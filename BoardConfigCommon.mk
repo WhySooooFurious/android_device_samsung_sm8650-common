@@ -202,3 +202,14 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Include the proprietary files BoardConfig.
 include vendor/samsung/sm8650-common/BoardConfigVendor.mk
+
+# The AOSPA board chain includes AOSPA's own BoardConfigSoong.mk, not the
+# LineageOS one, so the lineageVarsPlugin soong config namespace (needed by
+# the lineage_generator modules in vendor/lineage/build/soong -
+# generated_kernel_includes / prebuilt_kernel_includes, used by the
+# qcom-caf HALs via generated_kernel_headers) is never registered. Include
+# the LineageOS kernel + soong board configs here, after the device kernel
+# vars (TARGET_KERNEL_SOURCE, TARGET_KERNEL_ARCH) are set, so the exported
+# soong config values are correct.
+include vendor/lineage/config/BoardConfigKernel.mk
+include vendor/lineage/config/BoardConfigSoong.mk
