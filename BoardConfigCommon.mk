@@ -217,3 +217,10 @@ include vendor/samsung/sm8650-common/BoardConfigVendor.mk
 # soong config values are correct.
 include vendor/lineage/config/BoardConfigKernel.mk
 include vendor/lineage/config/BoardConfigSoong.mk
+
+# The CLO kernel-platform.mk (device/qcom/common chain, parsed earlier)
+# defaults BOARD_PREBUILT_DTBOIMAGE to the absent prebuilt dir
+# (device/qcom/pineapple-kernel/dtbs/dtbo.img), which breaks the in-tree
+# dtbo.img build (kati: writing to readonly directory). Force the
+# writable out-path default; this file is parsed after that chain.
+BOARD_PREBUILT_DTBOIMAGE := $(PRODUCT_OUT)/prebuilt_dtbo.img
