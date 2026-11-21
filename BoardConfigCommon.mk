@@ -218,6 +218,14 @@ include vendor/samsung/sm8650-common/BoardConfigVendor.mk
 # abspath (not $(BUILD_TOP), which is empty in the kati pass that
 # expands the kernel.mk rule cmds) so the value is always absolute
 TARGET_KERNEL_CLANG_PATH := $(abspath prebuilts/clang/host/linux-x86/clang-r584948b)
+# The kernel is 5.15 (< 6.11), so LOS BoardConfigKernel.mk does not
+# default TARGET_KERNEL_LIBC_SYSROOT_USE to host and instead compiles
+# the kernel host tools with --sysroot=<prebuilt glibc-4.8 sysroot>.
+# That sysroot lacks host headers this box relies on (openssl/ for
+# scripts/sign-file, libelf/ for tools/bpf/resolve_btfids) and the
+# tree prebuilts layout differs from the CLO images, so build the host
+# tools against the host system headers instead.
+TARGET_KERNEL_LIBC_SYSROOT_USE := host
 include vendor/lineage/config/BoardConfigKernel.mk
 include vendor/lineage/config/BoardConfigSoong.mk
 
