@@ -310,11 +310,12 @@ PRODUCT_PACKAGES += \
     WifiResTarget_spf
 
 # Partitions
-PRODUCT_PACKAGES += \
-    vendor_dsp_mountpoint \
-    vendor_firmware_mnt_mountpoint \
-    vendor_firmware-modem_mountpoint \
-    vendor_vm-system_mountpoint
+# The soong mkdir modules for these mountpoint dirs (defined in
+# device/qcom/common/Android.bp) would create kati rules that
+# duplicate the CLO make rules in
+# vendor/qcom/opensource/core-utils/build/AndroidBoardCommon.mk
+# (included by device/qcom/common/Android.mk), so the dirs are
+# created by the make rules instead.
 
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
