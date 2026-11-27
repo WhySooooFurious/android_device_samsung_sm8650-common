@@ -1,1 +1,10 @@
-hal_attribute_lineage(samsung_spen)
+# Samsung spen HAL attributes (not covered by the lineage common policy;
+# hal_samsung_spen_service is declared by vendor/service.te).
+# Soong collects this file into the vendor conf (attributes category,
+# before the .te files that use it).
+attribute hal_samsung_spen;
+expandattribute hal_samsung_spen true;
+attribute hal_samsung_spen_client;
+expandattribute hal_samsung_spen_client true;
+attribute hal_samsung_spen_server;
+expandattribute hal_samsung_spen_server false;
